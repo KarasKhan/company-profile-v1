@@ -1,0 +1,58 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import '../styles/global.css';
+
+const pageTitle = "Tentang Saya";
+---
+
+<!doctype html>
+<html lang="id">
+	<head>
+		<BaseHead title={`${pageTitle} | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="bg-white text-slate-800">
+		<Header />
+		<main class="container mx-auto px-4 py-16 max-w-4xl">
+			<h1 class="text-4xl font-bold mb-8 text-slate-900">Partner Digital Bisnis Anda</h1>
+			
+			<div class="prose prose-lg text-slate-600">
+				<p>
+					Halo! Saya adalah Fullstack Developer yang berbasis di Indonesia. 
+					Dengan pengalaman menangani berbagai proyek mulai dari <strong>Sistem Informasi Manajemen (SIM)</strong> 
+					hingga aplikasi mobile <strong>Flutter</strong>, saya fokus membantu UMKM dan instansi 
+					untuk Go Digital dengan cara yang benar.
+				</p>
+
+				<h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Visi Saya</h3>
+				<p>
+					Banyak bisnis menghabiskan uang jutaan rupiah untuk website yang akhirnya tidak terawat dan lambat. 
+					Misi saya adalah membangun sistem yang:
+				</p>
+				<ul class="list-disc pl-5 space-y-2">
+					<li><strong>Cepat:</strong> Loading di bawah 2 detik.</li>
+					<li><strong>Aman:</strong> Standar keamanan data terkini.</li>
+					<li><strong>Scalable:</strong> Siap menampung ribuan data tanpa error.</li>
+				</ul>
+
+				<h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Mengapa Memilih Saya?</h3>
+				<p>
+					Saya tidak hanya sekadar "Coding". Saya mengerti alur bisnis. 
+					Sebelum menulis baris kode pertama, saya akan berdiskusi mendalam tentang 
+					masalah apa yang ingin Anda selesaikan.
+				</p>
+			</div>
+
+			<div class="mt-12 p-6 bg-slate-50 border border-slate-200 rounded-xl">
+				<h3 class="text-xl font-bold mb-2">Siap mendiskusikan proyek Anda?</h3>
+				<p class="mb-4">Konsultasi awal gratis untuk membedah kebutuhan sistem Anda.</p>
+				<a href="https://wa.me/6281358811682" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700 transition">
+					Chat WhatsApp
+				</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

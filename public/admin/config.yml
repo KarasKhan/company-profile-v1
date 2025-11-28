@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main 
+
+media_folder: "public/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "blog"
+    label: "Artikel Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogPost.astro"}
+      - {label: "Judul", name: "title", widget: "string"}
+      - {label: "Deskripsi", name: "description", widget: "text"}
+      - {label: "Tanggal", name: "pubDate", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "YYYY-MM-DD", timeFormat: false}
+      - {label: "Gambar Utama", name: "heroImage", widget: "image"}
+      - {label: "Isi Konten", name: "body", widget: "markdown"}
