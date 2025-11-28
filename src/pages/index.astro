@@ -12,6 +12,8 @@ import '../styles/global.css';
 <html lang="id">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 	</head>
 	<body class="bg-slate-50 text-slate-800 font-sans antialiased">
 		
@@ -55,7 +57,7 @@ import '../styles/global.css';
 					
 					<div class="grid md:grid-cols-3 gap-8">
 						<div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition group">
-							<div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">🛠</div>
+                            <div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">🛠</div>
 							<h3 class="text-xl font-bold mb-3 text-slate-900">Laravel Expert</h3>
 							<p class="text-slate-600 leading-relaxed">
 								Membangun dashboard admin, ERP, dan sistem manajemen data yang kompleks namun tetap ngebut.
@@ -63,7 +65,7 @@ import '../styles/global.css';
 						</div>
 
 						<div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition group">
-							<div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">📱</div>
+                            <div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">📱</div>
 							<h3 class="text-xl font-bold mb-3 text-slate-900">Flutter Apps</h3>
 							<p class="text-slate-600 leading-relaxed">
 								Satu kode untuk Android & iOS. Hemat biaya pengembangan tanpa mengorbankan performa native.
@@ -71,7 +73,7 @@ import '../styles/global.css';
 						</div>
 
 						<div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition group">
-							<div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">🚀</div>
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">🚀</div>
 							<h3 class="text-xl font-bold mb-3 text-slate-900">SEO & Speed</h3>
 							<p class="text-slate-600 leading-relaxed">
 								Website statis (seperti ini) yang disukai Google. Load time di bawah 1 detik untuk retensi user maksimal.
@@ -85,5 +87,20 @@ import '../styles/global.css';
 		<div class="bg-slate-900 text-slate-300">
 			<Footer />
 		</div>
+
+        <script>
+            // @ts-ignore
+            if (window.netlifyIdentity) {
+                // @ts-ignore
+                window.netlifyIdentity.on("init", user => {
+                    if (!user) {
+                        // @ts-ignore
+                        window.netlifyIdentity.on("login", () => {
+                            document.location.href = "/admin/";
+                        });
+                    }
+                });
+            }
+        </script>
 	</body>
 </html>
